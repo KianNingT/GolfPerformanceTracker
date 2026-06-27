@@ -258,4 +258,20 @@ The app supports full **light and dark themes** with a manual toggle.
 
 ---
 
+## Screenshots and Video files
+
+
+https://github.com/user-attachments/assets/c0194fbe-5220-43b8-a4ad-253528d75af1
+
+<img width="1080" height="2376" alt="s9" src="https://github.com/user-attachments/assets/327e9250-7be1-440f-9fc3-eb8d05649bd3" />
+<img width="1080" height="2376" alt="s8" src="https://github.com/user-attachments/assets/b3d95ee5-bd15-4cf8-8d6e-ae16b1ca3533" />
+<img width="1080" height="2376" alt="s7" src="https://github.com/user-attachments/assets/eeb5adb7-6047-4afd-9bf4-38428323f6ce" />
+<img width="1080" height="2376" alt="s6" src="https://github.com/user-attachments/assets/0dbd23be-b57d-41e7-b91e-13152359c834" />
+<img width="1080" height="2376" alt="s5" src="https://github.com/user-attachments/assets/be277076-83c6-4c00-b0f3-f3e623315501" />
+<img width="1080" height="2376" alt="s4" src="https://github.com/user-attachments/assets/2eedb760-4a8a-4e7a-bb00-bc2c451bde94" />
+<img width="1080" height="2376" alt="s3" src="https://github.com/user-attachments/assets/c464a373-2b7f-46bf-b0c0-84cc8b4e4241" />
+<img width="1080" height="2376" alt="s2" src="https://github.com/user-attachments/assets/03d9db77-ccbe-495f-ac0b-f8ebb6d0961c" />
+<img width="1080" height="2376" alt="s1" src="https://github.com/user-attachments/assets/5b56e13a-05b7-4f90-b711-e5049bb52f15" />
+
+
 *Built using Kotlin, Jetpack Compose, and Clean Architecture.*
