@@ -36,7 +36,7 @@ class GolfRepositoryImpl @Inject constructor(
         const val REQUEST_DESCRIPTION_PLAYER_DETAIL = "fetch player detail"
     }
 
-    // ── Player List ───────────────────────────────────────────────────────────
+    // Player List
 
     /**
      * Returns a paged flow of [Player] domain models.
@@ -122,7 +122,7 @@ class GolfRepositoryImpl @Inject constructor(
     override suspend fun getDistinctClubs(): List<String> =
         playerDao.getDistinctClubs()
 
-    // ── Player Detail ─────────────────────────────────────────────────────────
+    // Player Detail
 
     /**
      * Offline-first player detail fetch.
@@ -212,7 +212,7 @@ class GolfRepositoryImpl @Inject constructor(
         }
     }
 
-    // ── Shot ──────────────────────────────────────────────────────────────────
+    // Shot
 
     override suspend fun getCachedShot(playerId: Int, shotId: Int): Shot? {
         return shotDao.getShot(playerId, shotId)?.toDomain()

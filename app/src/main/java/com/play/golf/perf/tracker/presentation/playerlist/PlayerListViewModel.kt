@@ -65,7 +65,7 @@ class PlayerListViewModel @Inject constructor(
         refreshPlayers()
     }
 
-    // ── Network Observer ──────────────────────────────────────────────────────
+    // Network Observer
 
     /**
      * Observes connectivity changes.
@@ -86,7 +86,7 @@ class PlayerListViewModel @Inject constructor(
             .launchIn(viewModelScope)
     }
 
-    // ── Data Loading ──────────────────────────────────────────────────────────
+    // Data Loading
 
     /**
      * Triggers a remote refresh of the player list.
@@ -134,7 +134,7 @@ class PlayerListViewModel @Inject constructor(
         _uiState.update { it.copy(availableClubs = clubs) }
     }
 
-    // ── Search & Filter ───────────────────────────────────────────────────────
+    // Search & Filter
 
     /**
      * Called on every keystroke from the SearchBar.

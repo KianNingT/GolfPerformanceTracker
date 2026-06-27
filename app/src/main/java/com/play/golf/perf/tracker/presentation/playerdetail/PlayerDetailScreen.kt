@@ -156,7 +156,7 @@ fun PlayerDetailScreen(
     }
 }
 
-// ── Top App Bar ───────────────────────────────────────────────────────────────
+// Top App Bar
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -203,7 +203,7 @@ private fun PlayerDetailTopBar(
     )
 }
 
-// ── Main Content ──────────────────────────────────────────────────────────────
+// Main Content
 
 @Composable
 private fun PlayerDetailContent(
@@ -217,7 +217,7 @@ private fun PlayerDetailContent(
         modifier        = Modifier.fillMaxSize(),
         contentPadding  = PaddingValues(bottom = 24.dp),
     ) {
-        // ── Offline Banner ────────────────────────────────────────────────────
+        // Offline Banner
         item {
             AnimatedVisibility(
                 visible = isOffline,
@@ -228,12 +228,12 @@ private fun PlayerDetailContent(
             }
         }
 
-        // ── Player Hero Section ───────────────────────────────────────────────
+        // Player Hero Section
         item {
             PlayerHeroSection(playerDetail = playerDetail)
         }
 
-        // ── Performance Stats Section (collapsible) ───────────────────────────
+        // Performance Stats Section (collapsible)
         item {
             PerformanceStatsSection(
                 playerDetail    = playerDetail,
@@ -242,12 +242,12 @@ private fun PlayerDetailContent(
             )
         }
 
-        // ── Career Stats Row ──────────────────────────────────────────────────
+        // Career Stats Row
         item {
             CareerStatsRow(playerDetail = playerDetail)
         }
 
-        // ── Shots Section Header ──────────────────────────────────────────────
+        // Shots Section Header
         item {
             Row(
                 modifier = Modifier
@@ -269,7 +269,7 @@ private fun PlayerDetailContent(
             }
         }
 
-        // ── Shot Cards ────────────────────────────────────────────────────────
+        // Shot Cards
         items(
             items = playerDetail.shots,
             key   = { shot -> shot.shotId },
@@ -284,7 +284,7 @@ private fun PlayerDetailContent(
     }
 }
 
-// ── Player Hero Section ───────────────────────────────────────────────────────
+// Player Hero Section
 
 @Composable
 private fun PlayerHeroSection(playerDetail: PlayerDetail) {
@@ -366,7 +366,7 @@ private fun PlayerHeroSection(playerDetail: PlayerDetail) {
     }
 }
 
-// ── Performance Stats Section (Animated expand/collapse) ──────────────────────
+// Performance Stats Section (Animated expand/collapse)
 
 @Composable
 private fun PerformanceStatsSection(
@@ -484,7 +484,7 @@ private fun PerformanceStatsSection(
     }
 }
 
-// ── Stat Progress Bar ─────────────────────────────────────────────────────────
+// Stat Progress Bar
 
 @Composable
 private fun StatProgressBar(
@@ -524,7 +524,7 @@ private fun StatProgressBar(
     }
 }
 
-// ── Stat Value Item ───────────────────────────────────────────────────────────
+// Stat Value Item
 
 @Composable
 private fun StatValueItem(label: String, value: String) {
@@ -543,7 +543,7 @@ private fun StatValueItem(label: String, value: String) {
     }
 }
 
-// ── Career Stats Row ──────────────────────────────────────────────────────────
+// Career Stats Row
 
 @Composable
 private fun CareerStatsRow(playerDetail: PlayerDetail) {
@@ -608,7 +608,7 @@ private fun VerticalDivider() {
     )
 }
 
-// ── Shot Summary Card ─────────────────────────────────────────────────────────
+// Shot Summary Card
 
 @Composable
 private fun ShotSummaryCard(
@@ -682,7 +682,7 @@ private fun ShotSummaryCard(
     }
 }
 
-// ── Offline Banner ────────────────────────────────────────────────────────────
+// Offline Banner
 
 @Composable
 private fun OfflineBanner() {
@@ -709,7 +709,7 @@ private fun OfflineBanner() {
     }
 }
 
-// ── Error State ───────────────────────────────────────────────────────────────
+// Error State
 
 @Composable
 private fun ErrorState(

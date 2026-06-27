@@ -120,7 +120,7 @@ val TextStyle.Companion.golfStatLabel get() = TextStyle(
     letterSpacing = 0.4.sp
 )
 
-// ── Material3 Typography object passed into MaterialTheme ─────────────────────
+// Material3 Typography object passed into MaterialTheme
 val GolfTypography = Typography(
     displayLarge = TextStyle(
         fontFamily    = DefaultFontFamily,

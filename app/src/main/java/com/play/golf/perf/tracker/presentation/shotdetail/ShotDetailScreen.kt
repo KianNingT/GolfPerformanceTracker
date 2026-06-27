@@ -22,12 +22,10 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
-import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -65,7 +63,6 @@ import com.play.golf.perf.tracker.ui.theme.gold_E8C96D
 import com.play.golf.perf.tracker.ui.theme.green_1A3C2E
 import com.play.golf.perf.tracker.ui.theme.green_2D6A4F
 import com.play.golf.perf.tracker.ui.theme.green_52B788
-import com.play.golf.perf.tracker.ui.theme.green_95D5B2
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -114,7 +111,7 @@ fun ShotDetailScreen(
     }
 }
 
-// ── Top App Bar ───────────────────────────────────────────────────────────────
+// Top App Bar
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -145,7 +142,7 @@ private fun ShotDetailTopBar(
     )
 }
 
-// ── Main Content ──────────────────────────────────────────────────────────────
+// Main Content
 
 @Composable
 private fun ShotDetailContent(shot: Shot) {
@@ -164,30 +161,30 @@ private fun ShotDetailContent(shot: Shot) {
             .alpha(contentAlpha.value)
             .verticalScroll(rememberScrollState()),
     ) {
-        // ── Hero Banner ───────────────────────────────────────────────────────
+        // Hero Banner
         ShotHeroBanner(shot = shot)
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        // ── Primary Metrics ───────────────────────────────────────────────────
+        // Primary Metrics
         SectionHeader(title = "Flight Metrics")
         FlightMetricsCard(shot = shot)
 
         Spacer(modifier = Modifier.height(12.dp))
 
-        // ── Distance Metrics ──────────────────────────────────────────────────
+        // Distance Metrics
         SectionHeader(title = "Distance Breakdown")
         DistanceMetricsCard(shot = shot)
 
         Spacer(modifier = Modifier.height(12.dp))
 
-        // ── Spin & Angle Metrics ──────────────────────────────────────────────
+        // Spin & Angle Metrics
         SectionHeader(title = "Spin & Trajectory")
         SpinTrajectoryCard(shot = shot)
 
         Spacer(modifier = Modifier.height(24.dp))
 
-        // ── Animated metric bars ──────────────────────────────────────────────
+        // Animated metric bars
         SectionHeader(title = "Performance Gauges")
         AnimatedMetricBars(shot = shot)
 
@@ -195,7 +192,7 @@ private fun ShotDetailContent(shot: Shot) {
     }
 }
 
-// ── Shot Hero Banner ──────────────────────────────────────────────────────────
+// Shot Hero Banner
 
 @Composable
 private fun ShotHeroBanner(shot: Shot) {
@@ -285,7 +282,7 @@ private fun ShotHeroBanner(shot: Shot) {
     }
 }
 
-// ── Flight Metrics Card ───────────────────────────────────────────────────────
+// Flight Metrics Card
 
 @Composable
 private fun FlightMetricsCard(shot: Shot) {
@@ -318,7 +315,7 @@ private fun FlightMetricsCard(shot: Shot) {
     }
 }
 
-// ── Distance Metrics Card ─────────────────────────────────────────────────────
+// Distance Metrics Card
 
 @Composable
 private fun DistanceMetricsCard(shot: Shot) {
@@ -353,7 +350,7 @@ private fun DistanceMetricsCard(shot: Shot) {
     }
 }
 
-// ── Spin & Trajectory Card ────────────────────────────────────────────────────
+// Spin & Trajectory Card
 
 @Composable
 private fun SpinTrajectoryCard(shot: Shot) {
@@ -379,7 +376,7 @@ private fun SpinTrajectoryCard(shot: Shot) {
     }
 }
 
-// ── Animated Metric Bars ──────────────────────────────────────────────────────
+// Animated Metric Bars
 
 /**
  * Animates each progress bar from 0 to its target value on entry.
@@ -496,7 +493,7 @@ private fun AnimatedStatBar(
     }
 }
 
-// ── Shared Composables ────────────────────────────────────────────────────────
+// Shared Composables
 
 @Composable
 private fun MetricCard(content: @Composable () -> Unit) {
@@ -572,7 +569,7 @@ private fun SectionHeader(title: String) {
     Spacer(modifier = Modifier.height(4.dp))
 }
 
-// ── Error State ───────────────────────────────────────────────────────────────
+// Error State
 
 @Composable
 private fun ShotErrorState(

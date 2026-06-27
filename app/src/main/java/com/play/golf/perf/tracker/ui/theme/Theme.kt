@@ -6,7 +6,7 @@ import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 
-// ── Light Color Scheme ────────────────────────────────────────────────────────
+// Light Color Scheme
 private val LightColorScheme: ColorScheme = lightColorScheme(
     primary              = PrimaryGreen,
     onPrimary            = OnPrimary,
@@ -37,7 +37,7 @@ private val LightColorScheme: ColorScheme = lightColorScheme(
     errorContainer       = ErrorContainerLight,
 )
 
-// ── Dark Color Scheme ─────────────────────────────────────────────────────────
+// Dark Color Scheme
 private val DarkColorScheme: ColorScheme = darkColorScheme(
     primary              = PrimaryContainer,       // lighter green becomes primary in dark
     onPrimary            = OnPrimaryContainer,
@@ -68,7 +68,7 @@ private val DarkColorScheme: ColorScheme = darkColorScheme(
     errorContainer       = ErrorContainerDark,
 )
 
-// ── App Theme ─────────────────────────────────────────────────────────────────
+// App Theme
 @Composable
 fun GolfPerfTrackerTheme(
     darkTheme: Boolean = false,

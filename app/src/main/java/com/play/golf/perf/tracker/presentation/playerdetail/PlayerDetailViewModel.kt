@@ -39,7 +39,7 @@ class PlayerDetailViewModel @Inject constructor(
         loadPlayerDetail()
     }
 
-    // ── Network Observer ──────────────────────────────────────────────────────
+    // Network Observer
 
     private fun observeNetwork() {
         networkObserver.networkStatus
@@ -58,7 +58,7 @@ class PlayerDetailViewModel @Inject constructor(
             .launchIn(viewModelScope)
     }
 
-    // ── Data Loading ──────────────────────────────────────────────────────────
+    // Data Loading
 
     /**
      * Loads player detail — serves cache first then refreshes from network.

@@ -10,7 +10,7 @@ import com.play.golf.perf.tracker.presentation.playerdetail.PlayerDetailScreen
 import com.play.golf.perf.tracker.presentation.playerlist.PlayerListScreen
 import com.play.golf.perf.tracker.presentation.shotdetail.ShotDetailScreen
 
-// ── Sealed Route Definitions ──────────────────────────────────────────────────
+//Sealed Route Definitions
 
 /**
  * Sealed class hierarchy representing every screen in the golf nav graph.
@@ -47,14 +47,14 @@ sealed class GolfScreen(val route: String) {
     }
 }
 
-// ── Graph Route Constants ─────────────────────────────────────────────────────
+// Graph Route Constants
 
 object GolfGraph {
     const val ROOT  = "golf_root_graph"
     const val GOLF  = "golf_graph"
 }
 
-// ── NavGraphBuilder Extension ─────────────────────────────────────────────────
+// NavGraphBuilder Extension
 
 /**
  * Registers the entire golf navigation sub-graph.
@@ -74,7 +74,7 @@ fun NavGraphBuilder.golfNavGraph(
         startDestination = GolfScreen.PlayerList.route,
     ) {
 
-        // ── Screen 1 — Player List ────────────────────────────────────────────
+        // Screen 1, Player List
         composable(route = GolfScreen.PlayerList.route) {
             PlayerListScreen(
                 onPlayerClick = { playerId ->
@@ -87,7 +87,7 @@ fun NavGraphBuilder.golfNavGraph(
             )
         }
 
-        // ── Screen 2 — Player Detail ──────────────────────────────────────────
+        // Screen 2, Player Detail
         composable(
             route     = GolfScreen.PlayerDetail.route,
             arguments = listOf(
@@ -106,7 +106,7 @@ fun NavGraphBuilder.golfNavGraph(
             )
         }
 
-        // ── Screen 3 — Shot Detail ────────────────────────────────────────────
+        // Screen 3, Shot Detail
         composable(
             route     = GolfScreen.ShotDetail.route,
             arguments = listOf(

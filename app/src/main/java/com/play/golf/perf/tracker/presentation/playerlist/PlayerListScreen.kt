@@ -129,7 +129,7 @@ fun PlayerListScreen(
                 .padding(innerPadding)
         ) {
 
-            // ── Offline Banner ────────────────────────────────────────────────
+            // Offline Banner
             AnimatedVisibility(
                 visible = uiState.isOffline,
                 enter   = expandVertically() + fadeIn(),
@@ -156,7 +156,7 @@ fun PlayerListScreen(
                 }
             )
 
-            // ── Club Filter Chips ─────────────────────────────────────────────
+            // Club Filter Chips
             AnimatedVisibility(visible = uiState.availableClubs.isNotEmpty()) {
                 ClubFilterChips(
                     clubs          = uiState.availableClubs,
@@ -165,7 +165,7 @@ fun PlayerListScreen(
                 )
             }
 
-            // ── Player Paged List ─────────────────────────────────────────────
+            // Player Paged List
             PullToRefreshBox(
                 isRefreshing = uiState.isRefreshing,
                 onRefresh    = viewModel::refreshPlayers,
@@ -180,7 +180,7 @@ fun PlayerListScreen(
     }
 }
 
-// ── Top App Bar ───────────────────────────────────────────────────────────────
+// Top App Bar
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -213,7 +213,7 @@ private fun PlayerListTopBar(
     )
 }
 
-// ── Offline Banner ────────────────────────────────────────────────────────────
+// Offline Banner
 
 @Composable
 private fun OfflineBanner() {
@@ -240,7 +240,7 @@ private fun OfflineBanner() {
     }
 }
 
-// ── Club Filter Chips ─────────────────────────────────────────────────────────
+// Club Filter Chips
 
 @Composable
 private fun ClubFilterChips(
@@ -273,7 +273,7 @@ private fun ClubFilterChips(
     }
 }
 
-// ── Paged Player List ─────────────────────────────────────────────────────────
+// Paged Player List
 
 @Composable
 private fun PlayerPagedList(
@@ -346,7 +346,7 @@ private fun PlayerPagedList(
     }
 }
 
-// ── Player Card ───────────────────────────────────────────────────────────────
+// Player Card
 
 @Composable
 private fun PlayerCard(
@@ -370,7 +370,7 @@ private fun PlayerCard(
             verticalAlignment    = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.spacedBy(12.dp),
         ) {
-            // ── Avatar ──────────────────────────────────────────────────────
+            // Avatar
             AsyncImage(
                 model               = player.avatarUrl,
                 contentDescription  = "${player.name} avatar",
@@ -381,7 +381,7 @@ private fun PlayerCard(
                     .background(MaterialTheme.colorScheme.surfaceVariant),
             )
 
-            // ── Player Info ─────────────────────────────────────────────────
+            // Player Info
             Column(
                 modifier = Modifier.weight(1f),
             ) {
@@ -404,7 +404,7 @@ private fun PlayerCard(
                 ClubBadge(club = player.club)
             }
 
-            // ── Key Stats ───────────────────────────────────────────────────
+            // Key Stats
             Column(
                 horizontalAlignment = Alignment.End,
                 verticalArrangement = Arrangement.spacedBy(4.dp),
@@ -422,7 +422,7 @@ private fun PlayerCard(
     }
 }
 
-// ── Club Badge ────────────────────────────────────────────────────────────────
+// Club Badge
 
 @Composable
 private fun ClubBadge(club: String) {
@@ -442,7 +442,7 @@ private fun ClubBadge(club: String) {
     }
 }
 
-// ── Stat Badge ────────────────────────────────────────────────────────────────
+// Stat Badge
 
 @Composable
 private fun StatBadge(label: String, value: String) {
@@ -460,7 +460,7 @@ private fun StatBadge(label: String, value: String) {
     }
 }
 
-// ── Empty State ───────────────────────────────────────────────────────────────
+// Empty State
 
 @Composable
 private fun EmptyState(modifier: Modifier = Modifier) {

@@ -61,12 +61,12 @@ android {
 }
 
 dependencies {
-    // ── Core ─────────────────────────────────────────────────────────────────
+    // Core
     implementation(libs.androidx.core.ktx)
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.kotlinx.coroutines.android)
 
-    // ── Compose BOM — keeps all Compose versions in sync ─────────────────────
+    // Compose BOM — keeps all Compose versions in sync
     implementation(platform(libs.compose.bom))
     implementation(libs.compose.ui)
     implementation(libs.compose.ui.graphics)
@@ -78,21 +78,21 @@ dependencies {
     implementation(libs.compose.animation)
     debugImplementation(libs.compose.ui.tooling)
 
-    // ── Activity & Lifecycle ──────────────────────────────────────────────────
+    // Activity & Lifecycle
     implementation(libs.activity.compose)
     implementation(libs.lifecycle.runtime.ktx)
     implementation(libs.lifecycle.runtime.compose)
     implementation(libs.lifecycle.viewmodel.compose)
 
-    // ── Navigation ────────────────────────────────────────────────────────────
+    // Navigation
     implementation(libs.navigation.compose)
 
-    // ── Hilt DI ───────────────────────────────────────────────────────────────
+    // Hilt DI
     implementation(libs.hilt.android)
     implementation(libs.hilt.navigation.compose)
     ksp(libs.hilt.compiler)
 
-    // ── Network ───────────────────────────────────────────────────────────────
+    // Network
     implementation(libs.retrofit.core)
     implementation(libs.retrofit.moshi)
     implementation(libs.okhttp.core)
@@ -101,25 +101,25 @@ dependencies {
     implementation(libs.moshi.kotlin)
     ksp(libs.moshi.codegen)
 
-    // ── Room ──────────────────────────────────────────────────────────────────
+    // Room
     implementation(libs.room.runtime)
     implementation(libs.room.ktx)
     implementation(libs.room.paging)
     ksp(libs.room.compiler)
 
-    // ── Image Loading ─────────────────────────────────────────────────────────
+    // Image Loading
     implementation(libs.coil.compose)
 
-    // ── Paging 3 ──────────────────────────────────────────────────────────────
+    // Paging 3
     implementation(libs.paging.runtime)
     implementation(libs.paging.compose)
 
-    // ── Logging ───────────────────────────────────────────────────────────────
+    // Logging
     implementation(libs.timber)
 
-    // ── Splash Screen ─────────────────────────────────────────────────────────
+    // Splash Screen
     implementation(libs.splashscreen)
 
-    //Data Store
+    // Data Store
     implementation(libs.datastore.preferences)
 }

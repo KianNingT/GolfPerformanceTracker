@@ -4,7 +4,7 @@ import com.play.golf.perf.tracker.data.local.entity.ShotEntity
 import com.play.golf.perf.tracker.data.remote.dto.ShotDto
 import com.play.golf.perf.tracker.domain.model.Shot
 
-// ── ShotDto → ShotEntity (remote to local cache) ─────────────────────────────
+// ShotDto → ShotEntity (remote to local cache)
 
 fun ShotDto.toEntity(playerId: Int): ShotEntity = ShotEntity(
     playerId      = playerId,
@@ -19,7 +19,7 @@ fun ShotDto.toEntity(playerId: Int): ShotEntity = ShotEntity(
     landingAngle  = landingAngle
 )
 
-// ── ShotEntity → Shot (local cache to domain) ─────────────────────────────────
+// ShotEntity → Shot (local cache to domain)
 
 fun ShotEntity.toDomain(): Shot = Shot(
     shotId        = shotId,
@@ -34,7 +34,7 @@ fun ShotEntity.toDomain(): Shot = Shot(
     landingAngle  = landingAngle
 )
 
-// ── ShotDto → Shot (direct remote to domain — used when no caching needed) ───
+// ShotDto → Shot (direct remote to domain, used when no caching needed)
 
 fun ShotDto.toDomain(playerId: Int): Shot = Shot(
     shotId        = shotId,
