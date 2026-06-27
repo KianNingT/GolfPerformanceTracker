@@ -258,8 +258,51 @@ The app supports full **light and dark themes** with a manual toggle.
 
 ---
 
-## Screenshots and Video files
+## Testing
 
+The project includes both unit tests and instrumented integration tests.
+
+### Unit Tests — `app/src/test/`
+
+Run with: **Android Studio → Run → All Tests** or `./gradlew test`
+
+| Test Class | Layer | What It Covers |
+|---|---|---|
+| `ResourceFlowTest` | Core | Flow emissions (Loading → Success/Error), exponential retry count verification, connectivity error flag, custom success predicate, flow completion |
+| `ResourceStateTest` | Core | All `Resource` variants mapped to `ResourceState`, mapper transform, `onSuccess` callback, Flow sequence with Turbine |
+| `GetPlayersUseCaseTest` | Domain | Paging snapshot assertions, name search, club filter, combined filter, refresh flow emissions, distinct clubs delegation |
+| `GetPlayerDetailUseCaseTest` | Domain | Offline-first dual emission (cache → network), `forceRefresh` delegation, connectivity error propagation |
+| `GetShotDetailUseCaseTest` | Domain | Cache hit/miss, all shot metric fields, `coVerify` delegation assertions |
+| `PlayerListViewModelTest` | Presentation | Search query, club filter toggle, clearFilters, refresh loading/success/error states, offline banner via network flow, dismissError |
+| `PlayerDetailViewModelTest` | Presentation | Loading vs refreshing distinction, offline-first dual emission, error suppressed when cache present, stats expand toggle, dismissError |
+| `ShotDetailViewModelTest` | Presentation | Cache hit with all metric fields, cache miss error state, `SavedStateHandle` nav arg reading |
+
+### Integration Tests — `app/src/androidTest/`
+
+Requires a connected device or emulator.
+
+Run with: **Android Studio → Run → All Tests** or `./gradlew connectedAndroidTest`
+
+| Test Class | Layer | What It Covers |
+|---|---|---|
+| `PlayerDaoTest` | Data / Room | Insert + paged query, alphabetical ordering, upsert on conflict, name search (partial + case-insensitive), club filter, combined search + filter, distinct clubs, player count, clear, player detail CRUD |
+| `ShotDaoTest` | Data / Room | Insert + query by player, shotId ordering, player isolation, single shot lookup, null returns, metric correctness, cascade delete when parent deleted, transaction atomicity, stale data replacement |
+
+### Testing Libraries
+
+| Library | Purpose |
+|---|---|
+| JUnit 4 | Test runner |
+| MockK | Mocking and verification |
+| Turbine | Flow testing (`test {}`, `awaitItem()`) |
+| Google Truth | Fluent assertions (`assertThat`) |
+| kotlinx-coroutines-test | `runTest`, `advanceUntilIdle`, `StandardTestDispatcher` |
+| Paging Testing | `asSnapshot()` for asserting `PagingData` contents |
+| Room Testing | In-memory database for DAO integration tests |
+
+---
+
+## Screenshots and Video files
 
 https://github.com/user-attachments/assets/c0194fbe-5220-43b8-a4ad-253528d75af1
 
@@ -273,5 +316,6 @@ https://github.com/user-attachments/assets/c0194fbe-5220-43b8-a4ad-253528d75af1
 <img width="1080" height="2376" alt="s2" src="https://github.com/user-attachments/assets/03d9db77-ccbe-495f-ac0b-f8ebb6d0961c" />
 <img width="1080" height="2376" alt="s1" src="https://github.com/user-attachments/assets/5b56e13a-05b7-4f90-b711-e5049bb52f15" />
 
+---
 
 *Built using Kotlin, Jetpack Compose, and Clean Architecture.*

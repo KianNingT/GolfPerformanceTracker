@@ -101,8 +101,7 @@ class PlayerDetailViewModel @Inject constructor(
 
                     is Resource.Error -> {
                         Timber.w(
-                            "PlayerDetailViewModel: error loading player $playerId — " +
-                                    resource.message
+                            "null%s", resource.message
                         )
                         _uiState.update {
                             it.copy(

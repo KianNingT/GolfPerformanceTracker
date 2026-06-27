@@ -31,6 +31,7 @@ coil                        = "2.6.0"
 paging                      = "3.3.0"
 pagingCompose               = "3.3.0"
 
+# DataStore
 datastore                   = "1.1.1"
 
 # Logging
@@ -38,6 +39,17 @@ timber                      = "5.0.1"
 
 # Splash Screen
 splashscreen                = "1.0.1"
+
+# Testing
+junit                       = "4.13.2"
+mockk                       = "1.13.11"
+turbine                     = "1.1.0"
+truth                       = "1.4.2"
+androidxTestExtJunit        = "1.2.1"
+androidxTestEspresso        = "3.6.1"
+androidxTestCore            = "1.6.1"
+archCoreTesting             = "2.2.0"
+
 
 [libraries]
 # Core
@@ -104,6 +116,27 @@ timber                      = { group = "com.jakewharton.timber", name = "timber
 
 # Splash Screen
 splashscreen                = { group = "androidx.core",        name = "core-splashscreen",             version.ref = "splashscreen" }
+
+# Testing - Unit
+test-junit                  = { group = "junit",                name = "junit",                         version.ref = "junit" }
+test-mockk                  = { group = "io.mockk",             name = "mockk",                         version.ref = "mockk" }
+test-coroutines             = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test",      version.ref = "coroutines" }
+test-turbine                = { group = "app.cash.turbine",     name = "turbine",                       version.ref = "turbine" }
+test-truth                  = { group = "com.google.truth",     name = "truth",                         version.ref = "truth" }
+#noinspection SimilarGradleDependency
+test-arch-core              = { group = "androidx.arch.core",   name = "core-testing",                  version.ref = "archCoreTesting" }
+
+# Testing - Android Instrumented
+androidtest-ext-junit       = { group = "androidx.test.ext",    name = "junit",                         version.ref = "androidxTestExtJunit" }
+androidtest-espresso        = { group = "androidx.test.espresso", name = "espresso-core",               version.ref = "androidxTestEspresso" }
+androidtest-core            = { group = "androidx.test",        name = "core-ktx",                      version.ref = "androidxTestCore" }
+androidtest-room            = { group = "androidx.room",        name = "room-testing",                  version.ref = "room" }
+androidtest-mockk           = { group = "io.mockk",             name = "mockk-android",                 version.ref = "mockk" }
+#noinspection SimilarGradleDependency
+androidtest-arch-core       = { group = "androidx.arch.core",   name = "core-testing",                  version.ref = "archCoreTesting" }
+
+paging-testing = { group = "androidx.paging", name = "paging-testing", version.ref = "paging" }
+
 
 [plugins]
 android-application         = { id = "com.android.application",                 version.ref = "agp" }

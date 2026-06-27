@@ -20,13 +20,12 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables { useSupportLibrary = true }
 
-        // Expose base URL to BuildConfig so it can be swapped per flavour if needed
         buildConfigField("String", "BASE_URL", "\"https://kianningt.github.io/golf-app-api/\"")
     }
 
     buildTypes {
         release {
-            isMinifyEnabled = true
+            isMinifyEnabled   = true
             isShrinkResources = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -56,6 +55,16 @@ android {
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
+            excludes += "META-INF/LICENSE.md"
+            excludes += "META-INF/LICENSE-notice.md"
+            excludes += "META-INF/NOTICE.md"
+            excludes += "META-INF/*.kotlin_module"
+        }
+    }
+
+    testOptions {
+        unitTests {
+            isReturnDefaultValues = true
         }
     }
 }
@@ -66,7 +75,7 @@ dependencies {
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.kotlinx.coroutines.android)
 
-    // Compose BOM — keeps all Compose versions in sync
+    // Compose BOM
     implementation(platform(libs.compose.bom))
     implementation(libs.compose.ui)
     implementation(libs.compose.ui.graphics)
@@ -120,6 +129,26 @@ dependencies {
     // Splash Screen
     implementation(libs.splashscreen)
 
-    // Data Store
+    // DataStore
     implementation(libs.datastore.preferences)
+
+    // Unit Tests
+    testImplementation(libs.test.junit)
+    testImplementation(libs.test.mockk)
+    testImplementation(libs.test.coroutines)
+    testImplementation(libs.test.turbine)
+    testImplementation(libs.test.truth)
+    testImplementation(libs.test.arch.core)
+    testImplementation(libs.paging.testing)
+
+    // Android Instrumented Tests
+    androidTestImplementation(libs.androidtest.ext.junit)
+    androidTestImplementation(libs.androidtest.espresso)
+    androidTestImplementation(libs.androidtest.core)
+    androidTestImplementation(libs.androidtest.room)
+    androidTestImplementation(libs.androidtest.mockk)
+    androidTestImplementation(libs.androidtest.arch.core)
+    androidTestImplementation(libs.test.coroutines)
+    androidTestImplementation(libs.test.truth)
+    androidTestImplementation(libs.test.turbine)
 }
